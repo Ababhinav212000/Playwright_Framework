@@ -56,3 +56,7 @@ npm run test:chromium
 - `tests/api/` contains HTTP scenarios and runs once in the dedicated `api` project, rather than once per browser.
 
 The API base URL defaults to `https://automationexercise.com` and can be overridden with the `API_BASE_URL` environment variable. API specs keep endpoint paths separate and use Playwright's `request` fixture.
+
+## GitHub Actions
+
+The workflow in `.github/workflows/playwright.yml` runs the complete Playwright suite (API tests and UI tests across the configured Chromium, Firefox, and WebKit projects) on every push and on pull requests targeting `main` or `master`. It installs dependencies and browsers, then uploads the HTML report as a workflow artifact. View each run and download its report from the repository's **Actions** tab.
